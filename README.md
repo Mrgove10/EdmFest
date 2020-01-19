@@ -1,5 +1,3 @@
-# django
-Django test project
+# EdmFest
 
-used this tutorial :
-https://docs.djangoproject.com/en/3.0/intro/tutorial01/
+Django app for recensing EDM (Electronic Dance Music) Festivals

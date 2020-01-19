@@ -13,7 +13,7 @@ class Artist(models.Model):
     first_name = models.CharField(max_length=150,null=False,default='')
     is_active = models.BooleanField()
     last_name = models.CharField(max_length=150)
-    picture = models.ImageField(upload_to='images/artists', default='Artist Image')
+    picture = models.ImageField(upload_to='cdn/images/artists', default='Artist Image')
     stage_name = models.CharField(max_length=150,null=False,default='')
     
     def __str__(self):
@@ -32,7 +32,7 @@ class Festival(models.Model):
     location_lng = models.FloatField()
     location_name = models.CharField(max_length=150)
     name = models.CharField(max_length=150,null=False)
-    picture = models.ImageField(upload_to='images/festivals', default='Festival Image')
+    picture = models.ImageField(upload_to='cdn/images/festivals', default='Festival Image')
     youtube_chanel = models.CharField(max_length=2048)
     
     def __str__(self):
