@@ -38,7 +38,7 @@ class Festival(models.Model):
     description = models.CharField(
         max_length=2048, null=False, default='', blank=False)
     first_year = models.PositiveIntegerField(blank=True, null=True)
-    headliners = models.ManyToManyField(Artist, blank=True, null=True)
+    headliners = models.ManyToManyField(Artist, blank=True)
     last_year = models.PositiveIntegerField(
         null=False, default='', blank=False)
     location_lat = models.FloatField(null=True, blank=True)

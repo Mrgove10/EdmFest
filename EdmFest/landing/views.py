@@ -13,6 +13,13 @@ def index(request):
     context = {}  # to passe variables in teh view
     return HttpResponse(template.render(context, request))
 
+def artists(request):
+    template = loader.get_template('landing/artists.html')
+    context = {
+        "artists": Artist.objects.all()
+    }
+    return HttpResponse(template.render(context, request))
+
 
 def artist(request, id):
     try:
@@ -22,6 +29,14 @@ def artist(request, id):
     template = loader.get_template('landing/artist.html')
     context = {
         "artist": artistVar
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def festivals(request):
+    template = loader.get_template('landing/festivals.html')
+    context = {
+        "festivals": Festival.objects.all()
     }
     return HttpResponse(template.render(context, request))
 
@@ -37,10 +52,11 @@ def festival(request, id):
     }
     return HttpResponse(template.render(context, request))
 
+#https://tutorial.djangogirls.org/en/django_forms/
 
 def festivalAdd(request):
     form = FestivalAddForm()
-    return render(request, 'landing/festivaladd.html', {'form': form})
+    return render(request, 'landing/festivalAdd.html', {'form': form})
 
 
 def artistAdd(request):
