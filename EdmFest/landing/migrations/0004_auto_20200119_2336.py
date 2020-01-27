@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='artist',
             name='picture',
-            field=models.ImageField(default='Artist Image', upload_to='images/artists'),
+            field=models.ImageField(
+                default='Artist Image', upload_to='images/artists'),
         ),
         migrations.AddField(
             model_name='festival',
@@ -28,7 +29,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='festival',
             name='picture',
-            field=models.ImageField(default='Festival Image', upload_to='images/festivals'),
+            field=models.ImageField(
+                default='Festival Image', upload_to='images/festivals'),
         ),
         migrations.AlterField(
             model_name='artist',

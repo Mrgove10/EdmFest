@@ -18,12 +18,13 @@ def artist(request, id):
     try:
         artistVar = Artist.objects.get(pk=id)
     except Artist.DoesNotExist:
-        raise Http404    
+        raise Http404
     template = loader.get_template('landing/artist.html')
     context = {
         "artist": artistVar
     }
     return HttpResponse(template.render(context, request))
+
 
 def festival(request, id):
     try:
@@ -36,9 +37,11 @@ def festival(request, id):
     }
     return HttpResponse(template.render(context, request))
 
+
 def festivalAdd(request):
     form = FestivalAddForm()
     return render(request, 'landing/festivaladd.html', {'form': form})
+
 
 def artistAdd(request):
     form = ArtistAddForm()

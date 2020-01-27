@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.realpath(os.path.dirname(__file__))
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,os.pardir,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, os.pardir, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1'
-    ]
+]
 
 
 # Application definition

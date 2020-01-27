@@ -13,11 +13,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='artist',
             name='picture',
-            field=models.ImageField(default='Artist Image', upload_to='artists'),
+            field=models.ImageField(
+                default='Artist Image', upload_to='artists'),
         ),
         migrations.AlterField(
             model_name='festival',
             name='picture',
-            field=models.ImageField(default='Festival Image', upload_to='festivals'),
+            field=models.ImageField(
+                default='Festival Image', upload_to='festivals'),
         ),
     ]

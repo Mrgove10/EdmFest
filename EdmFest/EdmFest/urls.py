@@ -20,4 +20,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('landing/', include('landing.urls')),
     path('admin/', admin.site.urls),
-] #+ static(r'^media/(?P<path>.*)$', document_root=MEDIA_ROOT)
+]  # + static(r'^media/(?P<path>.*)$', document_root=MEDIA_ROOT)

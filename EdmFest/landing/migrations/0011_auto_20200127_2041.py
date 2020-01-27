@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='artist',
             name='added_by',
-            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(
+                blank=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
         migrations.AlterField(
             model_name='artist',
@@ -50,7 +51,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='festival',
             name='headliners',
-            field=models.ManyToManyField(blank=True, null=True, to='landing.Artist'),
+            field=models.ManyToManyField(
+                blank=True, null=True, to='landing.Artist'),
         ),
         migrations.AlterField(
             model_name='festival',
