@@ -3,6 +3,8 @@ from django.http import HttpResponse, Http404
 from django.template import loader
 
 from .models import Festival, Artist
+
+from .forms import FestivalAddForm, ArtistAddForm
 # Create your views here.
 
 
@@ -33,3 +35,11 @@ def festival(request, id):
         "festival": festivalVar
     }
     return HttpResponse(template.render(context, request))
+
+def festivalAdd(request):
+    form = FestivalAddForm()
+    return render(request, 'landing/festivaladd.html', {'form': form})
+
+def artistAdd(request):
+    form = ArtistAddForm()
+    return render(request, 'landing/artistadd.html', {'form': form})
