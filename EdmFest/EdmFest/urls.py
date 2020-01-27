@@ -18,6 +18,6 @@ from django.urls import include, path
 from .settings import MEDIA_ROOT
 from django.conf.urls.static import static
 urlpatterns = [
-    path('landing/', include('landing.urls')),
+    path('', include('landing.urls')),
     path('admin/', admin.site.urls),
 ]

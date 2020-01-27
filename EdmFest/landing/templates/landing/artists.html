@@ -1,4 +1,7 @@
 {% extends 'landing/base.html' %}
 {% block content %}
 <h1>All attists</h1>
+{% for art in artists %}
+<p>{{ art.stage_name }}</p>
+{% endfor %}
 {% endblock %}
