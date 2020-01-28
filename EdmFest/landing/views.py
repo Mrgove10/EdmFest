@@ -58,9 +58,18 @@ def festivalAdd(request):
         form = FestivalAddForm(request.POST)
         if form.is_valid():
             festival = form.save(commit=False)
+            festival.added_by = request.user
             festival.name = request.POST['name']
             festival.description = request.POST['description']
             festival.last_year = request.POST['last_year']
+            festival.contry = request.POST['contry']
+            festival.first_year = request.POST['first_year']
+            festival.location_lat = request.POST['location_lat']
+            festival.location_lng = request.POST['location_lng']
+            festival.location_name = request.POST['location_name']
+            festival.youtube_chanel = request.POST['youtube_chanel']
+            festival.save()
+            festival.headliners.set(request.POST['headliners'])
             festival.save()
             return redirect('festival', id=festival.id)
     else:
@@ -69,5 +78,24 @@ def festivalAdd(request):
 
 
 def artistAdd(request):
-    form = ArtistAddForm()
+    if request.method == "POST":
+        form = ArtistAddForm(request.POST)
+        if form.is_valid():
+            artist = form.save(commit=False)
+            artist.added_by = request.user
+            artist.stage_name = request.POST['stage_name']
+            artist.first_name = request.POST['first_name']
+            artist.description = request.POST['description']
+            artist.born = request.POST['born']
+            artist.contry_origin = request.POST['contry_origin']
+            artist.died = request.POST['died']
+            if request.POST['is_active'] == 'true':
+                artist.is_active = True
+            else:
+                artist.is_active = False
+            artist.last_name = request.POST['last_name']
+            artist.save()
+            return redirect('artist', id=artist.id)
+    else:
+        form = ArtistAddForm()           
     return render(request, 'landing/artistadd.html', {'form': form})
