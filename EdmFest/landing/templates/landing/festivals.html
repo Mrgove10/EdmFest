@@ -1,7 +1,9 @@
 {% extends 'landing/base.html' %}
 {% block content %}
 <h1>All Festivals</h1>
-{% for fest in festivals %}
-<p>{{ fest.name }}</p>
-{% endfor %}
+<ul>
+    {% for fest in festivals %}
+    <li><a href='/festival/{{fest.id}}'>{{ fest.name }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}

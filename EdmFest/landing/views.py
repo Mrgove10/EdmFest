@@ -1,7 +1,6 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_list_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
-
 from .models import Festival, Artist
 
 from .forms import FestivalAddForm, ArtistAddForm
@@ -55,7 +54,17 @@ def festival(request, id):
 #https://tutorial.djangogirls.org/en/django_forms/
 
 def festivalAdd(request):
-    form = FestivalAddForm()
+    if request.method == "POST":
+        form = FestivalAddForm(request.POST)
+        if form.is_valid():
+            festival = form.save(commit=False)
+            festival.name = request.POST['name']
+            festival.description = request.POST['description']
+            festival.last_year = request.POST['last_year']
+            festival.save()
+            return redirect('festival', id=festival.id)
+    else:
+        form = FestivalAddForm()
     return render(request, 'landing/festivalAdd.html', {'form': form})
 
 

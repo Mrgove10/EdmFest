@@ -1,7 +1,9 @@
 {% extends 'landing/base.html' %}
 {% block content %}
 <h1>All attists</h1>
+<ul>
 {% for art in artists %}
-<p>{{ art.stage_name }}</p>
+<li><a href='/festival/{{art.id}}'>{{ art.stage_name }}</a></li>
 {% endfor %}
+</ul>
 {% endblock %}
