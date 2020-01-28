@@ -47,7 +47,8 @@ def festival(request, id):
         raise Http404
     template = loader.get_template('landing/festival.html')
     context = {
-        "festival": festivalVar
+        "festival": festivalVar,
+        "headliners":festivalVar.headliners.all(),
     }
     return HttpResponse(template.render(context, request))
 

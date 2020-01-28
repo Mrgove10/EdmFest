@@ -3,4 +3,18 @@
 <b>name</b> = {{festival.name}}<br>
 <b>description</b> = {{festival.description}}<br>
 <b>last_year</b> = {{festival.last_year}}<br>
+<b>added_by</b> = {{festival.added_by}}<br>
+<b>contry</b> = {{festival.contry}}<br>
+<b>first_year</b> = {{festival.first_year}}<br>
+<b>location_lat</b> = {{festival.location_lat}}<br>
+<b>location_lng</b> = {{festival.location_lng}}<br>
+<b>location_name</b> = {{festival.location_name}}<br>
+<b>youtube_chanel</b> = {{festival.youtube_chanel}}<br>
+
+<b>headliners = </b>
+<ul>
+{% for head in headliners %}
+<li><a href='/festival/{{head.id}}'>{{ head.stage_name }}</a></li>
+{% endfor %}
+</ul>
 {% endblock %}
