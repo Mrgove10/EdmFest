@@ -19,6 +19,10 @@ def artists(request):
     }
     return HttpResponse(template.render(context, request))
 
+def login(request):
+    template = loader.get_template('registration/login.html')
+    context = {}
+    return HttpResponse(template.render(context,request))
 
 def artist(request, id):
     try:

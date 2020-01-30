@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include 
 
 from . import views
 
@@ -12,4 +12,7 @@ urlpatterns = [
     path('festivals/', views.festivals, name='festivals'),
     path('festival/<int:id>/', views.festival, name='festival'),
     path('festival/add/', views.festivalAdd, name='festivalAdd'),
+    # auth
+    path('login/', include('django.contrib.auth.urls'), name='login'),
+    path('logout/', views.login, name='login'),
 ]

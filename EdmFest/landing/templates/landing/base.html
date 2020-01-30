@@ -38,12 +38,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/artists/"><i class="fas fa-compact-disc"></i> Artists</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="/artist/add"><i class="fas fa-plus-square"></i> Add an Artist</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/festival/add"><i class="fas fa-plus-square"></i> Add a Festival</a>
                 </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/"><i class="fas fa-user-cog"></i> Admin</a>
                 </li>
