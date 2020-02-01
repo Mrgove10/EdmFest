@@ -24,6 +24,13 @@ def login(request):
     context = {}
     return HttpResponse(template.render(context,request))
 
+
+def logout(request):
+    template = loader.get_template('registration/logout.html')
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+
 def artist(request, id):
     try:
         artistVar = Artist.objects.get(pk=id)

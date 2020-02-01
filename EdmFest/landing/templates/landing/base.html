@@ -48,11 +48,11 @@
                 {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="nav-link" href="/accounts/logout/"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login/"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a class="nav-link" href="/accounts/login/"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
                 {% endif %}
                 <li class="nav-item">

@@ -13,6 +13,7 @@ urlpatterns = [
     path('festival/<int:id>/', views.festival, name='festival'),
     path('festival/add/', views.festivalAdd, name='festivalAdd'),
     # auth
-    path('login/', include('django.contrib.auth.urls'), name='login'),
-    path('logout/', views.login, name='login'),
-]
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', views.login, name='login'),
+    path('accounts/logout/', views.logout, name='logout')
+]   
